@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bartertown Art — Paintings, Murals & Sculpture</title>
-<meta name="description" content="Original paintings, street murals, and found-object sculpture by Bartertown Art. Browse the gallery, follow on Pinterest, and shop on Etsy.">
+<title>Bartertown Art — Bobby Fuller | Paintings, Murals & Sculpture</title>
+<meta name="description" content="Original paintings, street murals, and found-object sculpture by Bobby 'Bartertown' Fuller of Lynchburg & Bedford, Virginia. Browse the gallery, follow on Pinterest, and shop on Etsy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Archivo:wght@400;600;800;900&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#17151a;          /* charcoal from the b/w work */
-    --bone:#efe7d6;         /* butcher-paper cream */
-    --mustard:#d9a417;      /* house-boy yellow */
-    --teal:#3aa6a0;         /* swirl-portrait teal */
-    --brick:#c23b2e;        /* riding-hood red */
-    --denim:#35618f;        /* overalls blue */
-    --violet:#7b5ea7;       /* moonlit purple */
+    --bone:#e9dfc9;         /* butcher-paper cream */
+    --mustard:#b98a2f;      /* dried ochre, not highlighter */
+    --teal:#5f8d88;         /* verdigris */
+    --brick:#a13c2f;        /* oxidized red */
+    --denim:#4a6785;        /* faded overalls */
+    --violet:#6d5a86;       /* dusty violet */
     --paper:#1f1c23;
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -75,13 +75,19 @@
   .c5{width:14vw;min-width:120px;top:55%;right:-2%;--r:8deg;animation-delay:.65s}
   .c6{width:15vw;min-width:130px;bottom:-4%;left:26%;--r:-8deg;animation-delay:.8s}
   .hero-center{position:relative;z-index:5;text-align:center;padding:0 1rem;max-width:900px}
-  .hero-kicker{font-family:'Caveat',cursive;font-size:clamp(1.3rem,2.6vw,1.9rem);color:var(--teal);transform:rotate(-2deg);display:inline-block}
+  .hero-kicker{font-family:'Caveat',cursive;font-size:clamp(1.3rem,2.6vw,1.9rem)}
   h1{
     font-family:'Permanent Marker',cursive;font-weight:400;
     font-size:clamp(3rem,10vw,7.5rem);line-height:.95;
-    text-shadow:4px 4px 0 rgba(0,0,0,.55);
+    color:transparent;
+    background:linear-gradient(178deg,#f0e8d4 8%,#ddd2b6 38%,#c4b795 62%,#d8cdaf 82%,#b3a684 100%);
+    -webkit-background-clip:text;background-clip:text;
+    filter:drop-shadow(0 10px 18px rgba(0,0,0,.55));
   }
-  h1 .yellow{color:var(--mustard)}
+  h1 .yellow{
+    background:linear-gradient(174deg,#cda44a 5%,#b98a2f 40%,#96702a 70%,#b18a32 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
   .hero-sub{margin:1.1rem auto 1.8rem;font-size:clamp(1rem,2vw,1.25rem);max-width:34rem;color:#cfc6b4;font-weight:400}
   .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
   .btn{
@@ -98,28 +104,81 @@
   .scroll-hint{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:5;color:#8f8779;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;animation:bob 2s ease-in-out infinite}
   @keyframes bob{50%{transform:translateX(-50%) translateY(6px)}}
 
-  /* ---------- paint strip divider ---------- */
-  .strip{height:14px;background:
-    linear-gradient(90deg,var(--brick) 0 18%,var(--mustard) 18% 41%,var(--teal) 41% 63%,var(--denim) 63% 84%,var(--violet) 84%);
-    transform:skewY(-.4deg);box-shadow:0 6px 18px rgba(0,0,0,.4)}
+  /* ---------- paint smear dividers (one rough brush stroke each) ---------- */
+  .strip{height:52px;transform:none;box-shadow:none;background:center/100% 100% no-repeat;
+    background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><filter id='p' x='-10%25' y='-60%25' width='120%25' height='220%25'><feTurbulence type='fractalNoise' baseFrequency='0.011 0.18' numOctaves='3' seed='11'/><feDisplacementMap in='SourceGraphic' scale='22'/></filter><g filter='url(%23p)' fill='%23b98a2f'><rect x='-30' y='20' width='1260' height='14' opacity='0.8'/><rect x='90' y='32' width='4' height='20' opacity='0.65'/><rect x='420' y='33' width='3' height='14' opacity='0.65'/><rect x='760' y='31' width='4' height='24' opacity='0.65'/><rect x='1080' y='32' width='3' height='16' opacity='0.65'/></g></svg>")}
+  body>div.strip:nth-of-type(2){background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><filter id='p' x='-10%25' y='-60%25' width='120%25' height='220%25'><feTurbulence type='fractalNoise' baseFrequency='0.013 0.16' numOctaves='3' seed='4'/><feDisplacementMap in='SourceGraphic' scale='24'/></filter><g filter='url(%23p)' fill='%235f8d88'><rect x='-30' y='22' width='1260' height='13' opacity='0.8'/><rect x='210' y='33' width='4' height='18' opacity='0.65'/><rect x='560' y='32' width='3' height='22' opacity='0.65'/><rect x='930' y='33' width='4' height='15' opacity='0.65'/></g></svg>")}
+  body>div.strip:nth-of-type(3){background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><filter id='p' x='-10%25' y='-60%25' width='120%25' height='220%25'><feTurbulence type='fractalNoise' baseFrequency='0.01 0.2' numOctaves='3' seed='19'/><feDisplacementMap in='SourceGraphic' scale='20'/></filter><g filter='url(%23p)' fill='%23a13c2f'><rect x='-30' y='21' width='1260' height='14' opacity='0.8'/><rect x='150' y='33' width='3' height='24' opacity='0.65'/><rect x='700' y='32' width='4' height='17' opacity='0.65'/><rect x='1010' y='34' width='3' height='20' opacity='0.65'/></g></svg>")}
+
+  /* ---------- masking tape + painted plank word treatments ---------- */
+  .tape{
+    position:relative;display:inline-block;
+    background:
+      /* peeling end: crease shadow, then adhesive catching light */
+      linear-gradient(97deg,transparent 82%,rgba(58,44,28,.22) 85%,rgba(255,255,255,.3) 88.5%,rgba(238,232,214,.55) 94%,rgba(255,255,255,.12) 100%),
+      /* grime stains */
+      radial-gradient(ellipse 42px 11px at 13% 80%,rgba(80,61,38,.22),transparent 70%),
+      radial-gradient(ellipse 55px 13px at 70% 15%,rgba(80,61,38,.13),transparent 70%),
+      radial-gradient(ellipse 24px 18px at 38% 95%,rgba(58,44,28,.14),transparent 75%),
+      /* darker worn edges */
+      linear-gradient(90deg,rgba(80,61,38,.2),transparent 5% 95%,rgba(80,61,38,.14)),
+      linear-gradient(180deg,rgba(80,61,38,.12),transparent 20% 82%,rgba(80,61,38,.16)),
+      /* crinkle */
+      repeating-linear-gradient(95deg,rgba(255,255,255,.05) 0 3px,transparent 3px 7px),
+      repeating-linear-gradient(88deg,rgba(58,44,28,.04) 0 5px,transparent 5px 11px),
+      /* semi-translucent tan base */
+      linear-gradient(177deg,rgba(212,200,170,.88),rgba(191,178,144,.88));
+    color:#4b4334;
+    padding:.22em 1.05em .3em;
+    transform:rotate(-1.6deg);
+    clip-path:polygon(0% 8%,1.5% 0%,15% 3%,50% 0%,85% 3%,98.5% 0%,100% 12%,99% 50%,100% 90%,97.5% 100%,60% 97%,25% 100%,1% 98%,0% 86%,.8% 45%);
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.38)) drop-shadow(5px 9px 7px rgba(0,0,0,.22));
+  }
+  .plank{
+    display:inline-block;font-style:normal;color:#e9dfc9;
+    background:
+      repeating-linear-gradient(180deg,rgba(0,0,0,.16) 0 2px,transparent 2px 7px),
+      linear-gradient(92deg,#5f4128,#755334 28%,#5a3d26 55%,#6e4d30 82%,#54391f);
+    padding:.08em .45em .16em;
+    transform:rotate(-1.2deg);
+    border-radius:3px/8px;
+    box-shadow:inset 0 0 14px rgba(0,0,0,.5),0 6px 14px rgba(0,0,0,.4);
+    position:relative;
+  }
+  .plank::before,.plank::after{
+    content:"";position:absolute;width:7px;height:7px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#c9c2b2,#5c5648 70%,#2e2a22);
+    box-shadow:0 1px 2px rgba(0,0,0,.6);
+  }
+  .plank::before{top:6px;left:6px}
+  .plank::after{bottom:6px;right:6px}
 
   /* ---------- sections ---------- */
   section{padding:5rem 1.4rem}
   .wrap{max-width:1200px;margin:0 auto}
   .sec-title{font-family:'Permanent Marker',cursive;font-weight:400;font-size:clamp(2rem,5vw,3.2rem);margin-bottom:.4rem}
-  .sec-title em{font-style:normal;color:var(--teal)}
-  .sec-note{font-family:'Caveat',cursive;color:#a99f8c;font-size:1.35rem;margin-bottom:2.2rem;transform:rotate(-1deg);display:inline-block}
+  .sec-note{font-family:'Caveat',cursive;font-size:1.3rem;margin-bottom:2.2rem}
 
   /* ---------- filters ---------- */
   .filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
   .chip{
-    font-family:'Archivo';font-weight:800;text-transform:uppercase;font-size:.8rem;letter-spacing:.07em;
-    background:var(--paper);color:var(--bone);border:1.5px solid #3a3542;border-radius:2px;
-    padding:.55rem 1.05rem;cursor:pointer;transform:rotate(-1deg);transition:.15s;
+    font-family:'Caveat',cursive;font-weight:600;font-size:1.15rem;
+    background:
+      linear-gradient(94deg,transparent 80%,rgba(58,44,28,.2) 84%,rgba(255,255,255,.26) 88%,rgba(238,232,214,.5) 95%,rgba(255,255,255,.1) 100%),
+      radial-gradient(ellipse 30px 9px at 18% 85%,rgba(80,61,38,.18),transparent 70%),
+      linear-gradient(90deg,rgba(80,61,38,.18),transparent 6% 94%,rgba(80,61,38,.12)),
+      repeating-linear-gradient(95deg,rgba(255,255,255,.05) 0 3px,transparent 3px 7px),
+      linear-gradient(177deg,rgba(212,200,170,.86),rgba(191,178,144,.86));
+    color:#57503f;border:none;
+    padding:.3rem 1.15rem .4rem;cursor:pointer;transform:rotate(-1.4deg);transition:.15s;
+    clip-path:polygon(0% 10%,2% 0%,30% 4%,70% 0%,98% 3%,100% 14%,99% 52%,100% 88%,97% 100%,55% 96%,20% 100%,1.5% 97%,0% 84%);
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.35)) drop-shadow(3px 6px 5px rgba(0,0,0,.18));
   }
-  .chip:nth-child(even){transform:rotate(1deg)}
-  .chip:hover{border-color:var(--mustard)}
-  .chip.on{background:var(--mustard);color:var(--ink);border-color:var(--mustard)}
+  .chip:nth-child(even){transform:rotate(1.2deg)}
+  .chip:nth-child(3){transform:rotate(-2.4deg)}
+  .chip:nth-child(5){transform:rotate(2deg)}
+  .chip:hover{color:var(--brick)}
+  .chip.on{color:#8c2f22;text-decoration:underline wavy rgba(140,47,34,.7) 2px;text-underline-offset:4px}
 
   /* ---------- gallery masonry ---------- */
   .gallery{columns:4 240px;column-gap:1.1rem}
@@ -138,9 +197,19 @@
     font-family:'Caveat',cursive;color:#4a4438;font-size:1.02rem;line-height:1;padding:0 .15rem;
   }
   .piece figcaption b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .piece .tag{font-family:'Archivo';font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--bone);padding:.15rem .4rem;border-radius:2px;flex:none;margin-left:.4rem}
-  .tag.painting{background:var(--denim)} .tag.mural{background:var(--teal);color:var(--ink)}
-  .tag.sculpture{background:var(--brick)} .tag.drawing{background:var(--violet)}
+  .piece .tag{
+    font-family:'Caveat',cursive;font-size:.88rem;font-weight:600;flex:none;margin-left:.4rem;
+    background:
+      linear-gradient(90deg,rgba(80,61,38,.16),transparent 12% 84%,rgba(80,61,38,.2)),
+      linear-gradient(177deg,rgba(210,198,167,.85),rgba(193,180,146,.85));
+    padding:.05rem .5rem .12rem;
+    clip-path:polygon(0% 14%,3% 0%,50% 5%,97% 0%,100% 18%,99% 55%,100% 86%,96% 100%,45% 95%,3% 100%,0% 82%);
+    transform:rotate(-2deg);
+    filter:drop-shadow(0 1px 2px rgba(0,0,0,.3));
+  }
+  .piece:nth-child(odd) .tag{transform:rotate(1.6deg)}
+  .tag.painting{color:#3d5570} .tag.mural{color:#42675f}
+  .tag.sculpture{color:#8c2f22} .tag.drawing{color:#584874}
   .piece.hide{display:none}
 
   /* ---------- lightbox ---------- */
@@ -239,7 +308,7 @@
     <img class="c6" src="images/IMG_1457.webp" alt="">
   </div>
   <div class="hero-center">
-    <span class="hero-kicker">paintings · murals · sculpture</span>
+    <span class="hero-kicker tape">paintings · murals · sculpture</span>
     <h1>BARTER<span class="yellow">TOWN</span><br>ART</h1>
     <p class="hero-sub">Raw, honest work made from paint, salvage, and book pages — hung on gallery walls, boxcars, and city brick.</p>
     <div class="hero-ctas">
@@ -260,8 +329,8 @@
 
 <section id="work">
   <div class="wrap">
-    <h2 class="sec-title">The <em>Work</em></h2>
-    <span class="sec-note">click any piece to see it up close — most are for sale or commissionable</span>
+    <h2 class="sec-title">The <em class="plank">Work</em></h2>
+    <span class="sec-note tape">click any piece to see it up close — most are for sale or commissionable</span>
     <div class="filters" role="tablist">
       <button class="chip on" data-f="all">All</button>
       <button class="chip" data-f="painting">Paintings</button>
@@ -283,10 +352,10 @@
       <img class="ap3" src="images/IMG_1456.webp" alt="The artist being interviewed in front of one of his murals">
     </div>
     <div class="about-copy">
-      <h2 class="sec-title">The <em>Artist</em></h2>
-      <p>Bartertown Art is one man, a pile of salvage, and no off switch. The work comes off canvas, barn doors, butcher paper, boxcars, and whatever the scrapyard gives up — gears become owls, book pages become pack horses, and city walls become stories.</p>
-      <p>Paintings, murals, found-object sculpture, commissions — if it can hold paint or a weld, it's fair game. Every piece is one of one.</p>
-      <span class="sig">— this is art.</span>
+      <h2 class="sec-title">The <em class="plank">Artist</em></h2>
+      <p>Bartertown is Bobby Fuller — a self-taught artist working around Lynchburg and Bedford, Virginia. He grew up poor in the Norfolk and Virginia Beach inner city, building his own toys out of what other people threw away, and he never stopped: gears become owls, book pages become pack horses, barn doors become canvases, and city walls become stories.</p>
+      <p>Nothing is bought. Every material is found, donated, or traded — 100% salvage. "Even though they are made from trash, I treat them like they are glass," he told Lynchburg Living. Best in Show winner at the Academy Center of the Arts juried exhibition, with wheat-paste figures and murals scattered across downtown walls. Every piece is one of one.</p>
+      <span class="sig">— Bartertown Bobby</span>
     </div>
   </div>
 </section>
@@ -295,8 +364,8 @@
 
 <section id="follow">
   <div class="wrap">
-    <h2 class="sec-title">Take a piece <em>home</em></h2>
-    <span class="sec-note">originals, commissions & prints</span>
+    <h2 class="sec-title">Take a piece <em class="plank">home</em></h2>
+    <span class="sec-note tape">originals, commissions & prints</span>
     <div class="shop-grid">
       <div class="card etsy">
         <h3><svg viewBox="0 0 24 24"><path d="M9.16 6.24c0-.47.05-.75.84-.75h4.03c1.4 0 2.18 1.19 2.74 3.42l.45-.05.31-4.86H4.48v.84c1.55.28 1.84.24 1.84 1.65v10.9c0 1.4-.29 1.36-1.84 1.64v.84h13.5l.5-5.24-.46-.05c-.7 2.53-1.7 3.98-3.4 3.98h-3.62c-1.35 0-1.84-.53-1.84-1.5v-4.68h2.66c1.46 0 1.7.61 2.06 2.16h.5v-5.6h-.5c-.36 1.55-.6 2.16-2.06 2.16H9.16V6.24z"/></svg> Etsy Shop</h3>
