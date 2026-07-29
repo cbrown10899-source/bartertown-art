@@ -245,7 +245,7 @@
   .about-copy .sig{font-family:'Caveat',cursive;font-size:1.8rem;color:var(--mustard);transform:rotate(-2deg);display:inline-block;margin-top:.4rem}
 
   /* ---------- shop / follow ---------- */
-  .shop-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1rem}
+  .shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;margin-top:1rem}
   .card{
     background:var(--paper);border:1.5px solid #3a3542;border-radius:4px;padding:2.2rem;
     transform:rotate(-.6deg);transition:.18s;position:relative;overflow:hidden;
@@ -255,11 +255,13 @@
   .card h3{font-family:'Permanent Marker',cursive;font-weight:400;font-size:1.7rem;margin-bottom:.6rem;display:flex;align-items:center;gap:.6rem}
   .card h3 svg{width:1.3em;height:1.3em;fill:currentColor}
   .card p{color:#b7ad9a;line-height:1.65;margin-bottom:1.4rem}
-  .card.etsy h3{color:#ff8659}
-  .card.pin h3{color:#ff6b7a}
+  .card.etsy h3{color:#c96a4a}
+  .card.pin h3{color:#b8586a}
+  .card.fb h3{color:#6d87a8}
   .card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px}
   .card.etsy::before{background:var(--brick)}
   .card.pin::before{background:var(--violet)}
+  .card.fb::before{background:var(--denim)}
 
   footer{padding:3rem 1.4rem;text-align:center;border-top:1px solid #2c2833}
   footer .brand{font-size:1.6rem}
@@ -294,6 +296,7 @@
     <li><a href="#work">The Work</a></li>
     <li><a href="#about">The Artist</a></li>
     <li><a href="#follow">Follow</a></li>
+    <li><a href="https://www.facebook.com/bobby.fuller.66215" target="_blank" rel="noopener" aria-label="Bobby Fuller on Facebook" title="Bobby on Facebook"><svg style="width:1.15rem;height:1.15rem;fill:currentColor;vertical-align:-3px" viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H17V4.6c-.27-.04-1.2-.12-2.28-.12-2.26 0-3.8 1.38-3.8 3.9v2.5H8.2V14h2.72v8h2.58z"/></svg></a></li>
     <li><a class="nav-shop" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">Shop Etsy</a></li>
   </ul>
 </nav>
@@ -377,6 +380,11 @@
         <p>New pieces, works in progress, and murals as they go up around town. Pin what you love — it helps more people find the work.</p>
         <a class="btn btn-pin" href="https://www.pinterest.com/bartertownart" target="_blank" rel="noopener">Follow the Boards</a>
       </div>
+      <div class="card fb">
+        <h3><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H17V4.6c-.27-.04-1.2-.12-2.28-.12-2.26 0-3.8 1.38-3.8 3.9v2.5H8.2V14h2.72v8h2.58z"/></svg> Facebook</h3>
+        <p>Posts straight from Bobby — works in progress, new installations around Lynchburg and Bedford, and pieces as they come off the bench.</p>
+        <a class="btn btn-pin" href="https://www.facebook.com/bobby.fuller.66215" target="_blank" rel="noopener">Follow Bobby</a>
+      </div>
     </div>
   </div>
 </section>
@@ -386,6 +394,7 @@
   <div class="socials">
     <a href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener" aria-label="Etsy"><svg viewBox="0 0 24 24"><path d="M9.16 6.24c0-.47.05-.75.84-.75h4.03c1.4 0 2.18 1.19 2.74 3.42l.45-.05.31-4.86H4.48v.84c1.55.28 1.84.24 1.84 1.65v10.9c0 1.4-.29 1.36-1.84 1.64v.84h13.5l.5-5.24-.46-.05c-.7 2.53-1.7 3.98-3.4 3.98h-3.62c-1.35 0-1.84-.53-1.84-1.5v-4.68h2.66c1.46 0 1.7.61 2.06 2.16h.5v-5.6h-.5c-.36 1.55-.6 2.16-2.06 2.16H9.16V6.24z"/></svg></a>
     <a href="https://www.pinterest.com/bartertownart" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.64 7.86 6.36 9.31-.09-.79-.17-2.01.03-2.87.19-.79 1.2-5.06 1.2-5.06s-.3-.61-.3-1.51c0-1.42.82-2.48 1.85-2.48.87 0 1.29.65 1.29 1.44 0 .87-.56 2.18-.85 3.4-.24 1.02.51 1.85 1.51 1.85 1.82 0 3.21-1.91 3.21-4.68 0-2.45-1.76-4.16-4.27-4.16-2.91 0-4.62 2.18-4.62 4.44 0 .88.34 1.82.76 2.33.08.1.1.19.07.29-.08.32-.25 1.02-.28 1.16-.05.19-.15.23-.35.14-1.31-.61-2.13-2.53-2.13-4.07 0-3.31 2.41-6.36 6.94-6.36 3.64 0 6.48 2.6 6.48 6.07 0 3.62-2.28 6.53-5.45 6.53-1.06 0-2.07-.55-2.41-1.21l-.65 2.5c-.24.91-.88 2.06-1.31 2.76.99.3 2.03.47 3.12.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+    <a href="https://www.facebook.com/bobby.fuller.66215" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H17V4.6c-.27-.04-1.2-.12-2.28-.12-2.26 0-3.8 1.38-3.8 3.9v2.5H8.2V14h2.72v8h2.58z"/></svg></a>
   </div>
   <p>© <span id="yr"></span> Bartertown Art · All pieces one of one · Site by a friend</p>
 </footer>
