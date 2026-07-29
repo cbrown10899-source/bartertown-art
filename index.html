@@ -154,7 +154,7 @@
   .plank::after{bottom:6px;right:6px}
 
   /* ---------- sections ---------- */
-  section{padding:5rem 1.4rem}
+  section{padding:5rem 1.4rem;scroll-margin-top:64px}
   .wrap{max-width:1200px;margin:0 auto}
   .sec-title{font-family:'Permanent Marker',cursive;font-weight:400;font-size:clamp(2rem,5vw,3.2rem);margin-bottom:.4rem}
   .sec-note{font-family:'Caveat',cursive;font-size:1.3rem;margin-bottom:2.2rem}
@@ -263,6 +263,31 @@
   .card.pin::before{background:var(--violet)}
   .card.fb::before{background:var(--denim)}
 
+  /* ---------- tumblers ---------- */
+  .merch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2.4rem;margin-top:1.5rem}
+  .tumbler-card{text-align:center}
+  .tumbler{
+    position:relative;width:190px;height:330px;margin:0 auto;
+    border-radius:22px 22px 30px 30px/16px 16px 26px 26px;overflow:hidden;
+    background:#e5dbc4;box-shadow:0 16px 36px rgba(0,0,0,.55);
+  }
+  .tumbler .wrap{position:absolute;inset:0}
+  .tumbler .wrap img{position:absolute;object-fit:cover;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .tumbler .shade{
+    position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:linear-gradient(90deg,rgba(0,0,0,.45),rgba(255,255,255,.16) 15%,rgba(255,255,255,.05) 28%,transparent 45%,rgba(255,255,255,.12) 57%,transparent 72%,rgba(0,0,0,.5));
+  }
+  .tumbler::before{ /* lid */
+    content:"";position:absolute;top:0;left:0;right:0;height:30px;z-index:5;
+    background:linear-gradient(180deg,#45424a,#26232b 55%,rgba(20,18,24,.25) 85%,transparent);
+    border-radius:22px 22px 10px 10px/16px 16px 8px 8px;
+    box-shadow:inset 0 -3px 6px rgba(0,0,0,.4);
+  }
+  .tumbler-base{width:140px;height:16px;margin:-4px auto 1rem;background:radial-gradient(ellipse,rgba(0,0,0,.55),transparent 68%)}
+  .tumbler-card h3{font-family:'Permanent Marker',cursive;font-weight:400;font-size:1.25rem;margin-bottom:.25rem}
+  .tumbler-card .spec{font-family:'Caveat',cursive;color:#a99f8c;font-size:1.15rem;margin-bottom:.9rem;display:block}
+  .merch-note{margin-top:2.2rem;color:#a99f8c;font-size:.95rem;text-align:center}
+
   footer{padding:3rem 1.4rem;text-align:center;border-top:1px solid #2c2833}
   footer .brand{font-size:1.6rem}
   footer p{color:#8f8779;font-size:.85rem;margin-top:.7rem}
@@ -295,6 +320,7 @@
   <ul>
     <li><a href="#work">The Work</a></li>
     <li><a href="#about">The Artist</a></li>
+    <li><a href="#merch">Tumblers</a></li>
     <li><a href="#follow">Follow</a></li>
     <li><a href="https://www.facebook.com/bobby.fuller.66215" target="_blank" rel="noopener" aria-label="Bobby Fuller on Facebook" title="Bobby on Facebook"><svg style="width:1.15rem;height:1.15rem;fill:currentColor;vertical-align:-3px" viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H17V4.6c-.27-.04-1.2-.12-2.28-.12-2.26 0-3.8 1.38-3.8 3.9v2.5H8.2V14h2.72v8h2.58z"/></svg></a></li>
     <li><a class="nav-shop" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">Shop Etsy</a></li>
@@ -360,6 +386,63 @@
       <p>Nothing is bought. Every material is found, donated, or traded — 100% salvage. "Even though they are made from trash, I treat them like they are glass," he told Lynchburg Living. Best in Show winner at the Academy Center of the Arts juried exhibition, with wheat-paste figures and murals scattered across downtown walls. Every piece is one of one.</p>
       <span class="sig">— Bartertown Bobby</span>
     </div>
+  </div>
+</section>
+
+<div class="strip"></div>
+
+<section id="merch">
+  <div class="wrap">
+    <h2 class="sec-title">On a <em class="plank">Tumbler</em></h2>
+    <span class="sec-note tape">the art, collaged around a 20oz tumbler — made to order</span>
+    <div class="merch-grid">
+      <div class="tumbler-card">
+        <div class="tumbler">
+          <div class="wrap">
+            <img src="images/IMG_1457.webp" alt="" style="top:-4%;left:-18%;width:80%;height:44%;transform:rotate(-8deg)">
+            <img src="images/IMG_1483.webp" alt="" style="top:18%;right:-16%;width:74%;height:46%;transform:rotate(6deg)">
+            <img src="images/IMG_1464.webp" alt="" style="bottom:6%;left:-10%;width:68%;height:42%;transform:rotate(4deg)">
+            <img src="images/IMG_1484.webp" alt="" style="bottom:-6%;right:-12%;width:64%;height:40%;transform:rotate(-6deg)">
+          </div>
+          <div class="shade"></div>
+        </div>
+        <div class="tumbler-base"></div>
+        <h3>Starry Nights</h3>
+        <span class="spec">the blues — hearts, houses & deep water</span>
+        <a class="btn btn-etsy" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">Order This Design</a>
+      </div>
+      <div class="tumbler-card">
+        <div class="tumbler">
+          <div class="wrap">
+            <img src="images/IMG_1461.webp" alt="" style="top:-5%;left:-14%;width:76%;height:45%;transform:rotate(6deg)">
+            <img src="images/IMG_1470.webp" alt="" style="top:20%;right:-15%;width:72%;height:47%;transform:rotate(-7deg)">
+            <img src="images/IMG_1462.webp" alt="" style="bottom:7%;left:-9%;width:66%;height:41%;transform:rotate(-4deg)">
+            <img src="images/IMG_1469.webp" alt="" style="bottom:-5%;right:-11%;width:62%;height:42%;transform:rotate(7deg)">
+          </div>
+          <div class="shade"></div>
+        </div>
+        <div class="tumbler-base"></div>
+        <h3>Street Walls</h3>
+        <span class="spec">murals off the brick — leopard, clown & crow</span>
+        <a class="btn btn-etsy" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">Order This Design</a>
+      </div>
+      <div class="tumbler-card">
+        <div class="tumbler">
+          <div class="wrap">
+            <img src="images/IMG_1493.webp" alt="" style="top:-6%;left:-16%;width:78%;height:46%;transform:rotate(-6deg)">
+            <img src="images/IMG_1497.webp" alt="" style="top:19%;right:-14%;width:70%;height:46%;transform:rotate(8deg)">
+            <img src="images/IMG_1499.webp" alt="" style="bottom:8%;left:-8%;width:64%;height:42%;transform:rotate(5deg)">
+            <img src="images/IMG_1455.webp" alt="" style="bottom:-7%;right:-13%;width:66%;height:41%;transform:rotate(-5deg)">
+          </div>
+          <div class="shade"></div>
+        </div>
+        <div class="tumbler-base"></div>
+        <h3>Backwoods</h3>
+        <span class="spec">the menagerie — stallion, bears, buck & owl</span>
+        <a class="btn btn-etsy" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">Order This Design</a>
+      </div>
+    </div>
+    <p class="merch-note">Every tumbler is printed to order. Want a different mix of pieces on yours? Message Bobby on <a href="https://www.facebook.com/bobby.fuller.66215" target="_blank" rel="noopener" style="color:var(--teal)">Facebook</a> and he'll build the wrap around your favorites.</p>
   </div>
 </section>
 
