@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bartertown Art — Paintings, Murals & Sculpture</title>
+<meta name="description" content="Original paintings, street murals, and found-object sculpture by Bartertown Art. Browse the gallery, follow on Pinterest, and shop on Etsy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Archivo:wght@400;600;800;900&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17151a;          /* charcoal from the b/w work */
+    --bone:#efe7d6;         /* butcher-paper cream */
+    --mustard:#d9a417;      /* house-boy yellow */
+    --teal:#3aa6a0;         /* swirl-portrait teal */
+    --brick:#c23b2e;        /* riding-hood red */
+    --denim:#35618f;        /* overalls blue */
+    --violet:#7b5ea7;       /* moonlit purple */
+    --paper:#1f1c23;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--bone);
+    font-family:'Archivo',sans-serif;
+    overflow-x:hidden;
+  }
+  /* film grain over everything */
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:120;opacity:.07;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--mustard);color:var(--ink)}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.9rem 1.4rem;
+    background:linear-gradient(180deg,rgba(23,21,26,.92),rgba(23,21,26,.75) 70%,transparent);
+    backdrop-filter:blur(6px);
+  }
+  .brand{font-family:'Permanent Marker',cursive;font-size:1.35rem;color:var(--bone);text-decoration:none;letter-spacing:.5px}
+  .brand span{color:var(--mustard)}
+  nav ul{display:flex;gap:1.4rem;list-style:none;align-items:center}
+  nav a{color:var(--bone);text-decoration:none;font-weight:600;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase}
+  nav a:hover{color:var(--mustard)}
+  .nav-shop{border:2px solid var(--mustard);padding:.35rem .9rem;border-radius:2px;transform:rotate(-1.5deg);display:inline-block}
+  .nav-shop:hover{background:var(--mustard);color:var(--ink)!important}
+  .nav-toggle{display:none;background:none;border:none;color:var(--bone);font-size:1.6rem;cursor:pointer}
+
+  /* ---------- hero collage ---------- */
+  header{
+    position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;
+    background:
+      radial-gradient(1200px 600px at 75% 20%, rgba(53,97,143,.35), transparent 60%),
+      radial-gradient(900px 500px at 15% 85%, rgba(58,166,160,.22), transparent 60%),
+      var(--ink);
+  }
+  .collage{position:absolute;inset:0;overflow:hidden}
+  .collage img{
+    position:absolute;object-fit:cover;
+    border:10px solid var(--bone);border-bottom-width:34px;
+    box-shadow:0 18px 40px rgba(0,0,0,.55);
+    opacity:0;animation:drop .7s cubic-bezier(.2,.7,.3,1.2) forwards;
+    filter:saturate(1.05);
+  }
+  @keyframes drop{from{opacity:0;transform:translateY(-36px) rotate(var(--r)) scale(1.04)}to{opacity:1;transform:translateY(0) rotate(var(--r)) scale(1)}}
+  .c1{width:23vw;min-width:190px;top:6%;left:3%;--r:-6deg;animation-delay:.05s}
+  .c2{width:19vw;min-width:160px;top:52%;left:-2%;--r:4deg;animation-delay:.2s}
+  .c3{width:21vw;min-width:170px;top:10%;right:4%;--r:5deg;animation-delay:.35s}
+  .c4{width:18vw;min-width:150px;bottom:6%;right:12%;--r:-4deg;animation-delay:.5s}
+  .c5{width:14vw;min-width:120px;top:55%;right:-2%;--r:8deg;animation-delay:.65s}
+  .c6{width:15vw;min-width:130px;bottom:-4%;left:26%;--r:-8deg;animation-delay:.8s}
+  .hero-center{position:relative;z-index:5;text-align:center;padding:0 1rem;max-width:900px}
+  .hero-kicker{font-family:'Caveat',cursive;font-size:clamp(1.3rem,2.6vw,1.9rem);color:var(--teal);transform:rotate(-2deg);display:inline-block}
+  h1{
+    font-family:'Permanent Marker',cursive;font-weight:400;
+    font-size:clamp(3rem,10vw,7.5rem);line-height:.95;
+    text-shadow:4px 4px 0 rgba(0,0,0,.55);
+  }
+  h1 .yellow{color:var(--mustard)}
+  .hero-sub{margin:1.1rem auto 1.8rem;font-size:clamp(1rem,2vw,1.25rem);max-width:34rem;color:#cfc6b4;font-weight:400}
+  .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:.55rem;
+    font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.95rem;
+    padding:.85rem 1.5rem;text-decoration:none;border-radius:2px;
+    transform:rotate(-1deg);transition:transform .15s,box-shadow .15s;
+  }
+  .btn:hover{transform:rotate(0) translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.4)}
+  .btn-etsy{background:var(--brick);color:var(--bone)}
+  .btn-pin{background:transparent;color:var(--bone);border:2px solid var(--bone)}
+  .btn-pin:hover{border-color:var(--teal);color:var(--teal)}
+  .btn svg{width:1.05em;height:1.05em;fill:currentColor}
+  .scroll-hint{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:5;color:#8f8779;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;animation:bob 2s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateX(-50%) translateY(6px)}}
+
+  /* ---------- paint strip divider ---------- */
+  .strip{height:14px;background:
+    linear-gradient(90deg,var(--brick) 0 18%,var(--mustard) 18% 41%,var(--teal) 41% 63%,var(--denim) 63% 84%,var(--violet) 84%);
+    transform:skewY(-.4deg);box-shadow:0 6px 18px rgba(0,0,0,.4)}
+
+  /* ---------- sections ---------- */
+  section{padding:5rem 1.4rem}
+  .wrap{max-width:1200px;margin:0 auto}
+  .sec-title{font-family:'Permanent Marker',cursive;font-weight:400;font-size:clamp(2rem,5vw,3.2rem);margin-bottom:.4rem}
+  .sec-title em{font-style:normal;color:var(--teal)}
+  .sec-note{font-family:'Caveat',cursive;color:#a99f8c;font-size:1.35rem;margin-bottom:2.2rem;transform:rotate(-1deg);display:inline-block}
+
+  /* ---------- filters ---------- */
+  .filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+  .chip{
+    font-family:'Archivo';font-weight:800;text-transform:uppercase;font-size:.8rem;letter-spacing:.07em;
+    background:var(--paper);color:var(--bone);border:1.5px solid #3a3542;border-radius:2px;
+    padding:.55rem 1.05rem;cursor:pointer;transform:rotate(-1deg);transition:.15s;
+  }
+  .chip:nth-child(even){transform:rotate(1deg)}
+  .chip:hover{border-color:var(--mustard)}
+  .chip.on{background:var(--mustard);color:var(--ink);border-color:var(--mustard)}
+
+  /* ---------- gallery masonry ---------- */
+  .gallery{columns:4 240px;column-gap:1.1rem}
+  .piece{
+    break-inside:avoid;margin-bottom:1.1rem;position:relative;cursor:zoom-in;
+    border:8px solid var(--bone);border-bottom-width:26px;background:var(--bone);
+    box-shadow:0 10px 26px rgba(0,0,0,.45);
+    transform:rotate(var(--tilt,0deg));transition:transform .18s,box-shadow .18s;
+    opacity:0;translate:0 24px;
+  }
+  .piece.show{opacity:1;translate:0 0;transition:opacity .5s,translate .5s,transform .18s,box-shadow .18s}
+  .piece:hover{transform:rotate(0) scale(1.02);box-shadow:0 18px 44px rgba(0,0,0,.6);z-index:3}
+  .piece img{display:block;width:100%;height:auto}
+  .piece figcaption{
+    position:absolute;left:0;right:0;bottom:-24px;height:24px;display:flex;align-items:center;justify-content:space-between;
+    font-family:'Caveat',cursive;color:#4a4438;font-size:1.02rem;line-height:1;padding:0 .15rem;
+  }
+  .piece figcaption b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .piece .tag{font-family:'Archivo';font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--bone);padding:.15rem .4rem;border-radius:2px;flex:none;margin-left:.4rem}
+  .tag.painting{background:var(--denim)} .tag.mural{background:var(--teal);color:var(--ink)}
+  .tag.sculpture{background:var(--brick)} .tag.drawing{background:var(--violet)}
+  .piece.hide{display:none}
+
+  /* ---------- lightbox ---------- */
+  .lb{position:fixed;inset:0;z-index:200;background:rgba(12,11,14,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:1rem}
+  .lb.open{display:flex}
+  .lb img{max-width:min(92vw,1000px);max-height:72vh;border:10px solid var(--bone);border-bottom-width:14px;box-shadow:0 24px 70px rgba(0,0,0,.7);background:var(--bone)}
+  .lb-meta{text-align:center;margin-top:1.1rem;max-width:640px}
+  .lb-meta h3{font-family:'Permanent Marker',cursive;font-weight:400;font-size:1.5rem}
+  .lb-meta p{color:#b7ad9a;margin:.35rem 0 .8rem}
+  .lb-meta .btn{font-size:.8rem;padding:.6rem 1.1rem}
+  .lb-x,.lb-prev,.lb-next{
+    position:absolute;background:none;border:none;color:var(--bone);cursor:pointer;font-size:2.2rem;line-height:1;
+    padding:.5rem .8rem;opacity:.8;font-family:'Archivo'
+  }
+  .lb-x:hover,.lb-prev:hover,.lb-next:hover{opacity:1;color:var(--mustard)}
+  .lb-x{top:.6rem;right:.9rem}
+  .lb-prev{left:.4rem;top:50%;transform:translateY(-50%)}
+  .lb-next{right:.4rem;top:50%;transform:translateY(-50%)}
+  .lb-count{position:absolute;top:1.35rem;left:1.4rem;color:#8f8779;font-size:.85rem;letter-spacing:.15em}
+
+  /* ---------- about ---------- */
+  .about{background:var(--paper)}
+  .about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:3rem;align-items:center}
+  .about-photos{position:relative;min-height:460px}
+  .about-photos img{
+    position:absolute;border:8px solid var(--bone);border-bottom-width:28px;
+    box-shadow:0 14px 34px rgba(0,0,0,.5);object-fit:cover;
+  }
+  .ap1{width:58%;top:0;left:0;transform:rotate(-4deg);z-index:2}
+  .ap2{width:46%;top:26%;right:0;transform:rotate(3.5deg);z-index:3}
+  .ap3{width:42%;bottom:0;left:14%;transform:rotate(-2deg);z-index:4}
+  .about-copy p{color:#cfc6b4;line-height:1.75;margin-bottom:1.1rem;font-size:1.04rem}
+  .about-copy .sig{font-family:'Caveat',cursive;font-size:1.8rem;color:var(--mustard);transform:rotate(-2deg);display:inline-block;margin-top:.4rem}
+
+  /* ---------- shop / follow ---------- */
+  .shop-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1rem}
+  .card{
+    background:var(--paper);border:1.5px solid #3a3542;border-radius:4px;padding:2.2rem;
+    transform:rotate(-.6deg);transition:.18s;position:relative;overflow:hidden;
+  }
+  .card:last-child{transform:rotate(.6deg)}
+  .card:hover{transform:rotate(0) translateY(-4px);border-color:var(--mustard)}
+  .card h3{font-family:'Permanent Marker',cursive;font-weight:400;font-size:1.7rem;margin-bottom:.6rem;display:flex;align-items:center;gap:.6rem}
+  .card h3 svg{width:1.3em;height:1.3em;fill:currentColor}
+  .card p{color:#b7ad9a;line-height:1.65;margin-bottom:1.4rem}
+  .card.etsy h3{color:#ff8659}
+  .card.pin h3{color:#ff6b7a}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px}
+  .card.etsy::before{background:var(--brick)}
+  .card.pin::before{background:var(--violet)}
+
+  footer{padding:3rem 1.4rem;text-align:center;border-top:1px solid #2c2833}
+  footer .brand{font-size:1.6rem}
+  footer p{color:#8f8779;font-size:.85rem;margin-top:.7rem}
+  footer .socials{margin-top:1rem;display:flex;gap:1.2rem;justify-content:center}
+  footer .socials a{color:var(--bone)}
+  footer .socials a:hover{color:var(--mustard)}
+  footer .socials svg{width:1.5rem;height:1.5rem;fill:currentColor}
+
+  @media(max-width:820px){
+    nav ul{
+      position:fixed;top:56px;right:0;flex-direction:column;background:var(--paper);
+      padding:1.4rem 2rem;gap:1.1rem;transform:translateX(110%);transition:.25s;border-left:1px solid #3a3542;
+    }
+    nav ul.open{transform:none}
+    .nav-toggle{display:block}
+    .c5,.c6{display:none}
+    .collage img{opacity:.45;animation-name:dropdim}
+    @keyframes dropdim{from{opacity:0;transform:translateY(-36px) rotate(var(--r))}to{opacity:.45;transform:rotate(var(--r))}}
+    .about-grid{grid-template-columns:1fr}
+    .about-photos{min-height:380px}
+    .shop-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="#top">Bartertown <span>Art</span></a>
+  <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
+  <ul>
+    <li><a href="#work">The Work</a></li>
+    <li><a href="#about">The Artist</a></li>
+    <li><a href="#follow">Follow</a></li>
+    <li><a class="nav-shop" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">Shop Etsy</a></li>
+  </ul>
+</nav>
+
+<header id="top">
+  <div class="collage" aria-hidden="true">
+    <img class="c1" src="images/IMG_1496.webp" alt="">
+    <img class="c2" src="images/IMG_1461.webp" alt="">
+    <img class="c3" src="images/IMG_1480.webp" alt="">
+    <img class="c4" src="images/IMG_1455.webp" alt="">
+    <img class="c5" src="images/IMG_1483.webp" alt="">
+    <img class="c6" src="images/IMG_1457.webp" alt="">
+  </div>
+  <div class="hero-center">
+    <span class="hero-kicker">paintings · murals · sculpture</span>
+    <h1>BARTER<span class="yellow">TOWN</span><br>ART</h1>
+    <p class="hero-sub">Raw, honest work made from paint, salvage, and book pages — hung on gallery walls, boxcars, and city brick.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-etsy" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M9.16 6.24c0-.47.05-.75.84-.75h4.03c1.4 0 2.18 1.19 2.74 3.42l.45-.05.31-4.86H4.48v.84c1.55.28 1.84.24 1.84 1.65v10.9c0 1.4-.29 1.36-1.84 1.64v.84h13.5l.5-5.24-.46-.05c-.7 2.53-1.7 3.98-3.4 3.98h-3.62c-1.35 0-1.84-.53-1.84-1.5v-4.68h2.66c1.46 0 1.7.61 2.06 2.16h.5v-5.6h-.5c-.36 1.55-.6 2.16-2.06 2.16H9.16V6.24z"/></svg>
+        Shop the Work
+      </a>
+      <a class="btn btn-pin" href="https://www.pinterest.com/bartertownart" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.64 7.86 6.36 9.31-.09-.79-.17-2.01.03-2.87.19-.79 1.2-5.06 1.2-5.06s-.3-.61-.3-1.51c0-1.42.82-2.48 1.85-2.48.87 0 1.29.65 1.29 1.44 0 .87-.56 2.18-.85 3.4-.24 1.02.51 1.85 1.51 1.85 1.82 0 3.21-1.91 3.21-4.68 0-2.45-1.76-4.16-4.27-4.16-2.91 0-4.62 2.18-4.62 4.44 0 .88.34 1.82.76 2.33.08.1.1.19.07.29-.08.32-.25 1.02-.28 1.16-.05.19-.15.23-.35.14-1.31-.61-2.13-2.53-2.13-4.07 0-3.31 2.41-6.36 6.94-6.36 3.64 0 6.48 2.6 6.48 6.07 0 3.62-2.28 6.53-5.45 6.53-1.06 0-2.07-.55-2.41-1.21l-.65 2.5c-.24.91-.88 2.06-1.31 2.76.99.3 2.03.47 3.12.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+        Pinterest
+      </a>
+    </div>
+  </div>
+  <span class="scroll-hint">scroll ↓</span>
+</header>
+
+<div class="strip"></div>
+
+<section id="work">
+  <div class="wrap">
+    <h2 class="sec-title">The <em>Work</em></h2>
+    <span class="sec-note">click any piece to see it up close — most are for sale or commissionable</span>
+    <div class="filters" role="tablist">
+      <button class="chip on" data-f="all">All</button>
+      <button class="chip" data-f="painting">Paintings</button>
+      <button class="chip" data-f="mural">Murals</button>
+      <button class="chip" data-f="sculpture">Sculpture</button>
+      <button class="chip" data-f="drawing">Drawings</button>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<div class="strip"></div>
+
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div class="about-photos">
+      <img class="ap1" src="images/IMG_1463.webp" alt="The artist painting a Starry Night piece at night in the workshop">
+      <img class="ap2" src="images/IMG_1452.jpg" alt="Black and white portrait of the artist">
+      <img class="ap3" src="images/IMG_1456.webp" alt="The artist being interviewed in front of one of his murals">
+    </div>
+    <div class="about-copy">
+      <h2 class="sec-title">The <em>Artist</em></h2>
+      <p>Bartertown Art is one man, a pile of salvage, and no off switch. The work comes off canvas, barn doors, butcher paper, boxcars, and whatever the scrapyard gives up — gears become owls, book pages become pack horses, and city walls become stories.</p>
+      <p>Paintings, murals, found-object sculpture, commissions — if it can hold paint or a weld, it's fair game. Every piece is one of one.</p>
+      <span class="sig">— this is art.</span>
+    </div>
+  </div>
+</section>
+
+<div class="strip"></div>
+
+<section id="follow">
+  <div class="wrap">
+    <h2 class="sec-title">Take a piece <em>home</em></h2>
+    <span class="sec-note">originals, commissions & prints</span>
+    <div class="shop-grid">
+      <div class="card etsy">
+        <h3><svg viewBox="0 0 24 24"><path d="M9.16 6.24c0-.47.05-.75.84-.75h4.03c1.4 0 2.18 1.19 2.74 3.42l.45-.05.31-4.86H4.48v.84c1.55.28 1.84.24 1.84 1.65v10.9c0 1.4-.29 1.36-1.84 1.64v.84h13.5l.5-5.24-.46-.05c-.7 2.53-1.7 3.98-3.4 3.98h-3.62c-1.35 0-1.84-.53-1.84-1.5v-4.68h2.66c1.46 0 1.7.61 2.06 2.16h.5v-5.6h-.5c-.36 1.55-.6 2.16-2.06 2.16H9.16V6.24z"/></svg> Etsy Shop</h3>
+        <p>Originals and prints, packed and shipped. See what's available right now, or message through Etsy to commission something custom.</p>
+        <a class="btn btn-etsy" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">Browse the Shop</a>
+      </div>
+      <div class="card pin">
+        <h3><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.64 7.86 6.36 9.31-.09-.79-.17-2.01.03-2.87.19-.79 1.2-5.06 1.2-5.06s-.3-.61-.3-1.51c0-1.42.82-2.48 1.85-2.48.87 0 1.29.65 1.29 1.44 0 .87-.56 2.18-.85 3.4-.24 1.02.51 1.85 1.51 1.85 1.82 0 3.21-1.91 3.21-4.68 0-2.45-1.76-4.16-4.27-4.16-2.91 0-4.62 2.18-4.62 4.44 0 .88.34 1.82.76 2.33.08.1.1.19.07.29-.08.32-.25 1.02-.28 1.16-.05.19-.15.23-.35.14-1.31-.61-2.13-2.53-2.13-4.07 0-3.31 2.41-6.36 6.94-6.36 3.64 0 6.48 2.6 6.48 6.07 0 3.62-2.28 6.53-5.45 6.53-1.06 0-2.07-.55-2.41-1.21l-.65 2.5c-.24.91-.88 2.06-1.31 2.76.99.3 2.03.47 3.12.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg> Pinterest</h3>
+        <p>New pieces, works in progress, and murals as they go up around town. Pin what you love — it helps more people find the work.</p>
+        <a class="btn btn-pin" href="https://www.pinterest.com/bartertownart" target="_blank" rel="noopener">Follow the Boards</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="brand" href="#top">Bartertown <span>Art</span></a>
+  <div class="socials">
+    <a href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener" aria-label="Etsy"><svg viewBox="0 0 24 24"><path d="M9.16 6.24c0-.47.05-.75.84-.75h4.03c1.4 0 2.18 1.19 2.74 3.42l.45-.05.31-4.86H4.48v.84c1.55.28 1.84.24 1.84 1.65v10.9c0 1.4-.29 1.36-1.84 1.64v.84h13.5l.5-5.24-.46-.05c-.7 2.53-1.7 3.98-3.4 3.98h-3.62c-1.35 0-1.84-.53-1.84-1.5v-4.68h2.66c1.46 0 1.7.61 2.06 2.16h.5v-5.6h-.5c-.36 1.55-.6 2.16-2.06 2.16H9.16V6.24z"/></svg></a>
+    <a href="https://www.pinterest.com/bartertownart" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.64 7.86 6.36 9.31-.09-.79-.17-2.01.03-2.87.19-.79 1.2-5.06 1.2-5.06s-.3-.61-.3-1.51c0-1.42.82-2.48 1.85-2.48.87 0 1.29.65 1.29 1.44 0 .87-.56 2.18-.85 3.4-.24 1.02.51 1.85 1.51 1.85 1.82 0 3.21-1.91 3.21-4.68 0-2.45-1.76-4.16-4.27-4.16-2.91 0-4.62 2.18-4.62 4.44 0 .88.34 1.82.76 2.33.08.1.1.19.07.29-.08.32-.25 1.02-.28 1.16-.05.19-.15.23-.35.14-1.31-.61-2.13-2.53-2.13-4.07 0-3.31 2.41-6.36 6.94-6.36 3.64 0 6.48 2.6 6.48 6.07 0 3.62-2.28 6.53-5.45 6.53-1.06 0-2.07-.55-2.41-1.21l-.65 2.5c-.24.91-.88 2.06-1.31 2.76.99.3 2.03.47 3.12.47 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+  </div>
+  <p>© <span id="yr"></span> Bartertown Art · All pieces one of one · Site by a friend</p>
+</footer>
+
+<!-- lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Artwork viewer">
+  <span class="lb-count" id="lbCount"></span>
+  <button class="lb-x" id="lbX" aria-label="Close">×</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-meta">
+    <h3 id="lbTitle"></h3>
+    <p id="lbDesc"></p>
+    <a class="btn btn-etsy" id="lbBuy" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">Ask about this piece</a>
+  </div>
+  <button class="lb-next" id="lbNext" aria-label="Next">›</button>
+</div>
+
+<script>
+const ETSY = "https://www.etsy.com/shop/BartertownArt";      // TODO: real shop URL
+const PIN  = "https://www.pinterest.com/bartertownart";      // TODO: real profile URL
+
+const PIECES = [
+  {f:"IMG_1457.webp", t:"painting",  n:"Starry Heart",           d:"An anatomical heart beating inside Van Gogh's night sky."},
+  {f:"IMG_1496.webp", t:"painting",  n:"Copper Mermaid",         d:"Hair like fire, fins like water — a floor-to-ceiling siren."},
+  {f:"IMG_1461.webp", t:"mural",     n:"Blue Leopard, Waiting",  d:"A spotted blue cat perched on a painted chair, streetside concrete."},
+  {f:"IMG_1455.webp", t:"sculpture", n:"Counter Owl",            d:"Found-object owl built from gears, counters, and salvaged steel."},
+  {f:"IMG_1480.webp", t:"painting",  n:"Red in the Woods",       d:"Red Riding Hood diptych — wolves in the treeline, apples on the road."},
+  {f:"IMG_1476.webp", t:"painting",  n:"The House He Carries",   d:"A boy wears his childhood home like a crown against mustard skies."},
+  {f:"IMG_1477.webp", t:"sculpture", n:"Moonlight Treehouse",    d:"An illuminated tree village rising out of a porcelain sea."},
+  {f:"IMG_1470.webp", t:"mural",     n:"Balancing Act",          d:"A clown walks the rail with his dog, painted straight onto a boxcar."},
+  {f:"IMG_1483.webp", t:"painting",  n:"In the Swirl",           d:"A face surfacing through ripples of teal and violet, in a matching hand-finished frame."},
+  {f:"IMG_1494.webp", t:"sculpture", n:"Rose Courier",           d:"A horse built from book pages, hauling a basket of paper roses."},
+  {f:"IMG_1481.webp", t:"painting",  n:"Alice, Overflowing",     d:"The frame can't hold the flood — the paint spills right off the canvas."},
+  {f:"IMG_1468.webp", t:"mural",     n:"The Exchange",           d:"A quiet trade on white brick, under the flag."},
+  {f:"IMG_1460.webp", t:"painting",  n:"Moonlit",                d:"A girl dissolving into violet drips beneath a small moon."},
+  {f:"IMG_1485.webp", t:"sculpture", n:"Draft Horse",            d:"A bronzed workhorse mid-pull, posed against the N&W boxcar."},
+  {f:"IMG_1493.webp", t:"painting",  n:"Barn Door Stallion",     d:"A pale horse painted straight onto a reclaimed barn door."},
+  {f:"IMG_1464.webp", t:"painting",  n:"House Adrift",           d:"A lit house floating loose through a starfield."},
+  {f:"IMG_1487.webp", t:"mural",     n:"Memorial",               d:"A soldier kneels with flags at the stone."},
+  {f:"IMG_1482.webp", t:"painting",  n:"Night Moth",             d:"Monochrome reverie in a carved silver frame."},
+  {f:"IMG_1495.webp", t:"sculpture", n:"Ceremonial Stag",        d:"A bronzed stag in full regalia, medallion at its side."},
+  {f:"IMG_1459.webp", t:"painting",  n:"The House He Carries — Study", d:"The boy and his house, up close."},
+  {f:"IMG_1469.webp", t:"mural",     n:"Pointing the Way",       d:"A woman in Delft blue strides across bare concrete."},
+  {f:"IMG_1484.webp", t:"painting",  n:"Anchored",               d:"A blue dreamer, two goldfish, and an anchor holding her down."},
+  {f:"IMG_1497.webp", t:"painting",  n:"Bear Family",            d:"A black bear and cubs on weathered barnwood planks."},
+  {f:"IMG_1474.webp", t:"sculpture", n:"Balloon to the Moon",    d:"A wire rider climbs from a painted galaxy toward a glowing balloon."},
+  {f:"IMG_1475.webp", t:"painting",  n:"Storm on Her Mind",      d:"Lightning, a house on her head, and one gold butterfly."},
+  {f:"IMG_1498.webp", t:"painting",  n:"Alice, Grown",           d:"Too big for the room — Alice meets herself small."},
+  {f:"IMG_1462.webp", t:"mural",     n:"Crow & Hood",            d:"A hooded figure and its crow on a graffiti block wall."},
+  {f:"IMG_1488.webp", t:"painting",  n:"The Rose Trade",         d:"A rifle for a rose — painted on butcher paper."},
+  {f:"IMG_1499.webp", t:"painting",  n:"Whitetail",              d:"A buck mid-stride across reclaimed planks."},
+  {f:"IMG_1479.webp", t:"sculpture", n:"Pack Horse",             d:"A paper horse loaded for the long road."},
+  {f:"IMG_1478.webp", t:"painting",  n:"Dreaming with Birds",    d:"She sleeps mid-air while the sunset carries her."},
+  {f:"IMG_1489.webp", t:"sculpture", n:"Junk Sail",              d:"A fish under full sail, assembled from salvage."},
+  {f:"IMG_1500.webp", t:"painting",  n:"Drifting in Red",        d:"A red-cloaked figure swims through the reeds of a gilded frame."},
+  {f:"IMG_1472.webp", t:"painting",  n:"Seated, Blue & Pink",    d:"A larger-than-life figure resting in the studio."},
+  {f:"IMG_1486.webp", t:"sculpture", n:"Barter Town",            d:"Two pack animals meet head to head — the namesake piece."},
+  {f:"IMG_1466.webp", t:"painting",  n:"Orbit Rider",            d:"A striped figure folded around a wheel of sky."},
+  {f:"IMG_1492.webp", t:"painting",  n:"Moon Crossing",          d:"Figures string lights up ladders toward a full moon."},
+  {f:"IMG_1467.webp", t:"painting",  n:"Locomotive Dream",       d:"Denim, steam, and steel — a daydream running on rails."},
+  {f:"IMG_1490.webp", t:"sculpture", n:"Chapel Birdhouse",       d:"A copper-roofed chapel for the neighborhood birds."},
+  {f:"IMG_1491.webp", t:"drawing",   n:"Lantern Parade",         d:"Stick figures and balloon trees on a cold river walk."},
+  {f:"IMG_1465.webp", t:"painting",  n:"Moon Harvest",           d:"A small figure salutes an enormous chartreuse moon."},
+  {f:"IMG_1471.webp", t:"drawing",   n:"Skirmish",               d:"Stick figures at war, in ink and burnt sienna."},
+  {f:"IMG_1458.webp", t:"painting",  n:"Double B",               d:"Raw brushwork study in black and red."},
+];
+
+// point every shop link at the real Etsy/Pinterest URLs
+document.querySelectorAll('a[href*="etsy.com"]').forEach(a=>a.href=ETSY);
+document.querySelectorAll('a[href*="pinterest.com"]').forEach(a=>a.href=PIN);
+
+const gallery = document.getElementById('gallery');
+const tilts = [-1.4,1.2,-0.8,1.6,-1.8,0.9];
+PIECES.forEach((p,i)=>{
+  const fig = document.createElement('figure');
+  fig.className = 'piece';
+  fig.style.setProperty('--tilt', tilts[i%tilts.length]+'deg');
+  fig.dataset.t = p.t; fig.dataset.i = i;
+  fig.innerHTML = `<img src="images/${p.f}" alt="${p.n} — ${p.t}" loading="lazy">
+    <figcaption><b>${p.n}</b><span class="tag ${p.t}">${p.t}</span></figcaption>`;
+  fig.addEventListener('click',()=>openLb(i));
+  gallery.appendChild(fig);
+});
+
+// reveal on scroll
+const io = new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}
+}),{threshold:.08});
+document.querySelectorAll('.piece').forEach(el=>io.observe(el));
+
+// filters
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on');
+  const f = c.dataset.f;
+  document.querySelectorAll('.piece').forEach(el=>{
+    el.classList.toggle('hide', f!=='all' && el.dataset.t!==f);
+    el.classList.add('show');
+  });
+}));
+
+// lightbox
+const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'),
+      lbTitle=document.getElementById('lbTitle'), lbDesc=document.getElementById('lbDesc'),
+      lbCount=document.getElementById('lbCount');
+let cur=0;
+function visibleIdxs(){
+  return [...document.querySelectorAll('.piece:not(.hide)')].map(el=>+el.dataset.i);
+}
+function openLb(i){cur=i;renderLb();lb.classList.add('open');document.body.style.overflow='hidden'}
+function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
+function step(dir){
+  const v=visibleIdxs(); if(!v.length)return;
+  let pos=v.indexOf(cur); pos=(pos+dir+v.length)%v.length; cur=v[pos]; renderLb();
+}
+function renderLb(){
+  const p=PIECES[cur];
+  lbImg.src='images/'+p.f; lbImg.alt=p.n;
+  lbTitle.textContent=p.n; lbDesc.textContent=p.d;
+  const v=visibleIdxs();
+  lbCount.textContent=(v.indexOf(cur)+1)+' / '+v.length;
+}
+document.getElementById('lbX').addEventListener('click',closeLb);
+document.getElementById('lbPrev').addEventListener('click',()=>step(-1));
+document.getElementById('lbNext').addEventListener('click',()=>step(1));
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowLeft')step(-1);
+  if(e.key==='ArrowRight')step(1);
+});
+
+// touch swipe in lightbox
+let tx=null;
+lb.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});
+lb.addEventListener('touchend',e=>{
+  if(tx===null)return;
+  const dx=e.changedTouches[0].clientX-tx;
+  if(Math.abs(dx)>50)step(dx<0?1:-1);
+  tx=null;
+},{passive:true});
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
