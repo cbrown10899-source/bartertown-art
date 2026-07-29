@@ -264,10 +264,16 @@
   .card.fb::before{background:var(--denim)}
 
   /* ---------- tumblers ---------- */
-  .merch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2.4rem;margin-top:1.5rem;align-items:end}
+  .merch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.2rem;margin-top:1.5rem}
   .tumbler-card{text-align:center}
-  .cupsvg{display:block;margin:0 auto;filter:drop-shadow(0 16px 16px rgba(0,0,0,.5))}
-  .tumbler-base{width:140px;height:16px;margin:-2px auto 1rem;background:radial-gradient(ellipse,rgba(0,0,0,.55),transparent 68%)}
+  .merch-photo{
+    display:block;width:100%;margin-bottom:1.1rem;cursor:zoom-in;
+    border:8px solid var(--bone);border-bottom-width:24px;background:var(--bone);
+    box-shadow:0 12px 30px rgba(0,0,0,.5);
+    transform:rotate(-1.1deg);transition:transform .18s,box-shadow .18s;
+  }
+  .tumbler-card:nth-child(2) .merch-photo{transform:rotate(1deg)}
+  .merch-photo:hover{transform:rotate(0) scale(1.02);box-shadow:0 18px 44px rgba(0,0,0,.65)}
   .tumbler-card h3{font-family:'Permanent Marker',cursive;font-weight:400;font-size:1.25rem;margin-bottom:.25rem}
   .tumbler-card .spec{font-family:'Caveat',cursive;color:#a99f8c;font-size:1.15rem;margin-bottom:.9rem;display:block}
   .merch-note{margin-top:2.2rem;color:#a99f8c;font-size:.95rem;text-align:center}
@@ -392,111 +398,31 @@
 <section id="merch">
   <div class="wrap">
     <h2 class="sec-title">On a <em class="plank">Tumbler</em></h2>
-    <span class="sec-note tape">the art, collaged around a cup — three shapes, printed to order</span>
+    <span class="sec-note tape">print-on-demand renditions — printed & shipped to order via Printify</span>
     <div class="merch-grid">
       <div class="tumbler-card">
-        <svg class="cupsvg" viewBox="0 0 200 348" width="190" role="img" aria-label="Tall skinny tumbler with Starry Nights art wrap">
-          <defs>
-            <clipPath id="t1c"><path d="M40 70 L160 70 L148 316 Q147 334 128 334 L72 334 Q53 334 52 316 Z"/></clipPath>
-            <linearGradient id="t1s" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset=".12" stop-color="#fff" stop-opacity=".24"/>
-              <stop offset=".28" stop-color="#fff" stop-opacity=".05"/><stop offset=".5" stop-color="#fff" stop-opacity=".18"/>
-              <stop offset=".74" stop-color="#000" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity=".55"/>
-            </linearGradient>
-          </defs>
-          <rect x="114" y="8" width="11" height="58" rx="5" transform="rotate(9 119 37)" fill="#a13c2f"/>
-          <rect x="114" y="8" width="5" height="58" rx="2.5" transform="rotate(9 119 37)" fill="#c05a4c" opacity=".8"/>
-          <g clip-path="url(#t1c)">
-            <rect x="30" y="60" width="140" height="284" fill="#e7ddc6"/>
-            <image href="images/IMG_1457.webp" x="18" y="62" width="112" height="108" preserveAspectRatio="xMidYMid slice" transform="rotate(-8 74 116)"/>
-            <image href="images/IMG_1483.webp" x="92" y="96" width="104" height="100" preserveAspectRatio="xMidYMid slice" transform="rotate(6 144 146)"/>
-            <image href="images/IMG_1464.webp" x="22" y="166" width="100" height="98" preserveAspectRatio="xMidYMid slice" transform="rotate(4 72 215)"/>
-            <image href="images/IMG_1484.webp" x="88" y="212" width="100" height="104" preserveAspectRatio="xMidYMid slice" transform="rotate(-6 138 264)"/>
-            <ellipse cx="100" cy="330" rx="52" ry="9" fill="#000" opacity=".2"/>
-            <path d="M40 70 L160 70 L148 316 Q147 334 128 334 L72 334 Q53 334 52 316 Z" fill="url(#t1s)"/>
-          </g>
-          <path d="M36 70 L164 70 L160 50 Q159 44 152 44 L48 44 Q41 44 40 50 Z" fill="#c9d4d6" opacity=".6"/>
-          <path d="M36 70 L164 70" stroke="#8fa0a3" stroke-width="1.5" opacity=".7"/>
-          <path d="M40 50 L160 50" stroke="#fff" stroke-width="1" opacity=".4"/>
-          <path d="M40 70 L160 70 L148 316 Q147 334 128 334 L72 334 Q53 334 52 316 Z" fill="none" stroke="#000" stroke-opacity=".3"/>
-        </svg>
-        <div class="tumbler-base"></div>
+        <img class="merch-photo" src="images/merch/starry-nights-tumblers.jpg" alt="Three 20oz skinny tumblers with the Starry Nights art collage"
+             onclick="openCustom(this.src,'Starry Nights','20oz skinny tumbler with straw — three wrap layouts of the blues: Starry Heart, In the Swirl, Anchored & House Adrift. Printed to order.')">
         <h3>Starry Nights</h3>
         <span class="spec">20oz skinny tumbler — hearts, houses & deep water</span>
         <a class="btn btn-etsy" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">Order This Design</a>
       </div>
       <div class="tumbler-card">
-        <svg class="cupsvg" viewBox="0 0 200 300" width="180" role="img" aria-label="To-go coffee cup with Street Walls art wrap">
-          <defs>
-            <clipPath id="t2c"><path d="M28 78 L172 78 L157 264 Q156 284 136 284 L64 284 Q44 284 43 264 Z"/></clipPath>
-            <linearGradient id="t2s" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset=".12" stop-color="#fff" stop-opacity=".24"/>
-              <stop offset=".28" stop-color="#fff" stop-opacity=".05"/><stop offset=".5" stop-color="#fff" stop-opacity=".18"/>
-              <stop offset=".74" stop-color="#000" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity=".55"/>
-            </linearGradient>
-            <linearGradient id="t2l" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#fbfaf7"/><stop offset=".55" stop-color="#dad7d0"/><stop offset="1" stop-color="#b3b0a8"/>
-            </linearGradient>
-          </defs>
-          <g clip-path="url(#t2c)">
-            <rect x="20" y="70" width="160" height="220" fill="#e7ddc6"/>
-            <image href="images/IMG_1461.webp" x="10" y="70" width="112" height="98" preserveAspectRatio="xMidYMid slice" transform="rotate(6 66 119)"/>
-            <image href="images/IMG_1470.webp" x="94" y="92" width="104" height="96" preserveAspectRatio="xMidYMid slice" transform="rotate(-7 146 140)"/>
-            <image href="images/IMG_1462.webp" x="16" y="158" width="98" height="92" preserveAspectRatio="xMidYMid slice" transform="rotate(-4 65 204)"/>
-            <image href="images/IMG_1469.webp" x="92" y="176" width="96" height="96" preserveAspectRatio="xMidYMid slice" transform="rotate(7 140 224)"/>
-            <ellipse cx="100" cy="280" rx="56" ry="9" fill="#000" opacity=".2"/>
-            <path d="M28 78 L172 78 L157 264 Q156 284 136 284 L64 284 Q44 284 43 264 Z" fill="url(#t2s)"/>
-          </g>
-          <path d="M24 78 L176 78 L173 62 Q172 56 165 56 L35 56 Q28 56 27 62 Z" fill="url(#t2l)"/>
-          <path d="M58 56 Q58 30 100 30 Q142 30 142 56 Z" fill="url(#t2l)"/>
-          <rect x="110" y="40" width="18" height="7" rx="3.5" fill="#8b8982"/>
-          <path d="M24 78 L176 78" stroke="#8f8d86" stroke-width="1.5" opacity=".8"/>
-          <path d="M58 56 L142 56" stroke="#9a978f" stroke-width="1" opacity=".7"/>
-          <path d="M28 78 L172 78 L157 264 Q156 284 136 284 L64 284 Q44 284 43 264 Z" fill="none" stroke="#000" stroke-opacity=".3"/>
-        </svg>
-        <div class="tumbler-base"></div>
+        <img class="merch-photo" src="images/merch/street-walls-mugs.jpg" alt="Three travel coffee mugs with the Street Walls mural collage"
+             onclick="openCustom(this.src,'Street Walls','Travel coffee mug with handle — three finishes: torn-paper collage, blacked-out leopard, and taped-photo wrap. Printed to order.')">
         <h3>Street Walls</h3>
-        <span class="spec">16oz coffee cup — leopard, clown & crow</span>
+        <span class="spec">travel coffee mug — leopard, clown & crow</span>
         <a class="btn btn-etsy" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">Order This Design</a>
       </div>
       <div class="tumbler-card">
-        <svg class="cupsvg" viewBox="0 0 200 356" width="190" role="img" aria-label="Travel coffee tumbler with Backwoods art wrap">
-          <defs>
-            <clipPath id="t3c"><path d="M34 84 L166 84 L152 322 Q151 342 130 342 L70 342 Q49 342 48 322 Z"/></clipPath>
-            <linearGradient id="t3s" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset=".12" stop-color="#fff" stop-opacity=".24"/>
-              <stop offset=".28" stop-color="#fff" stop-opacity=".05"/><stop offset=".5" stop-color="#fff" stop-opacity=".18"/>
-              <stop offset=".74" stop-color="#000" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity=".55"/>
-            </linearGradient>
-            <linearGradient id="t3l" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#17161a"/><stop offset=".18" stop-color="#4a474f"/>
-              <stop offset=".45" stop-color="#232127"/><stop offset=".7" stop-color="#3a373f"/><stop offset="1" stop-color="#121115"/>
-            </linearGradient>
-          </defs>
-          <g clip-path="url(#t3c)">
-            <rect x="26" y="76" width="148" height="280" fill="#e7ddc6"/>
-            <image href="images/IMG_1493.webp" x="14" y="76" width="110" height="106" preserveAspectRatio="xMidYMid slice" transform="rotate(-6 69 129)"/>
-            <image href="images/IMG_1497.webp" x="90" y="106" width="102" height="102" preserveAspectRatio="xMidYMid slice" transform="rotate(8 141 157)"/>
-            <image href="images/IMG_1499.webp" x="20" y="182" width="98" height="98" preserveAspectRatio="xMidYMid slice" transform="rotate(5 69 231)"/>
-            <image href="images/IMG_1455.webp" x="86" y="222" width="102" height="102" preserveAspectRatio="xMidYMid slice" transform="rotate(-5 137 273)"/>
-            <ellipse cx="100" cy="338" rx="50" ry="9" fill="#000" opacity=".2"/>
-            <path d="M34 84 L166 84 L152 322 Q151 342 130 342 L70 342 Q49 342 48 322 Z" fill="url(#t3s)"/>
-          </g>
-          <path d="M30 84 L170 84 L166 62 Q165 56 158 56 L42 56 Q35 56 34 62 Z" fill="url(#t3l)"/>
-          <path d="M52 56 L148 56 Q150 40 138 38 L62 38 Q50 40 52 56 Z" fill="url(#t3l)"/>
-          <rect x="86" y="28" width="28" height="12" rx="5" fill="#2b2830"/>
-          <rect x="90" y="31" width="14" height="5" rx="2.5" fill="#524e58"/>
-          <path d="M30 84 L170 84" stroke="#000" stroke-width="1.5" opacity=".5"/>
-          <path d="M34 62 L166 62" stroke="#6a6672" stroke-width="1" opacity=".6"/>
-          <path d="M34 84 L166 84 L152 322 Q151 342 130 342 L70 342 Q49 342 48 322 Z" fill="none" stroke="#000" stroke-opacity=".3"/>
-        </svg>
-        <div class="tumbler-base"></div>
+        <img class="merch-photo" src="images/merch/backwoods-tumblers.jpg" alt="Three 20oz steel tumblers with the Backwoods animal collage"
+             onclick="openCustom(this.src,'Backwoods','20oz steel tumbler — barnwood animal collage in black or bone, plus the Counter Owl solo wrap. Printed to order.')">
         <h3>Backwoods</h3>
-        <span class="spec">24oz travel tumbler — stallion, bears, buck & owl</span>
+        <span class="spec">20oz steel tumbler — stallion, bears, buck & owl</span>
         <a class="btn btn-etsy" href="https://www.etsy.com/shop/BartertownArt" target="_blank" rel="noopener">Order This Design</a>
       </div>
     </div>
-    <p class="merch-note">Every tumbler is printed to order. Want a different mix of pieces on yours? Message Bobby on <a href="https://www.facebook.com/bobby.fuller.66215" target="_blank" rel="noopener" style="color:var(--teal)">Facebook</a> and he'll build the wrap around your favorites.</p>
+    <p class="merch-note">These are renditions of what print-on-demand can do with Bobby's work — each piece is printed and shipped to order through Printify. Tap a photo to see it up close. Want a different mix of pieces on yours? Message Bobby on <a href="https://www.facebook.com/bobby.fuller.66215" target="_blank" rel="noopener" style="color:var(--teal)">Facebook</a> and he'll build the wrap around your favorites.</p>
   </div>
 </section>
 
@@ -642,9 +568,23 @@ let cur=0;
 function visibleIdxs(){
   return [...document.querySelectorAll('.piece:not(.hide)')].map(el=>+el.dataset.i);
 }
-function openLb(i){cur=i;renderLb();lb.classList.add('open');document.body.style.overflow='hidden'}
+function openLb(i){
+  cur=i;
+  document.getElementById('lbPrev').style.display='';
+  document.getElementById('lbNext').style.display='';
+  renderLb();lb.classList.add('open');document.body.style.overflow='hidden';
+}
+function openCustom(src,title,desc){
+  cur=null;
+  lbImg.src=src;lbImg.alt=title;
+  lbTitle.textContent=title;lbDesc.textContent=desc;lbCount.textContent='';
+  document.getElementById('lbPrev').style.display='none';
+  document.getElementById('lbNext').style.display='none';
+  lb.classList.add('open');document.body.style.overflow='hidden';
+}
 function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
 function step(dir){
+  if(cur===null)return;
   const v=visibleIdxs(); if(!v.length)return;
   let pos=v.indexOf(cur); pos=(pos+dir+v.length)%v.length; cur=v[pos]; renderLb();
 }
